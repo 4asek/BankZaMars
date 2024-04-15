@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApplication2.TableClass
+namespace WebApplication2.Data.Models
 {
     public class Employee
     {
