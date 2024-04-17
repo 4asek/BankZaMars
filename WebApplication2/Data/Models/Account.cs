@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication2.Data.Models
 {
     public class Account
     {
         [Key]
-        public Guid id { get; set; }
+        public Guid Id { get; set; }
+        public Guid CustomerID { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string City { get; set; }
@@ -13,7 +15,12 @@ namespace WebApplication2.Data.Models
         public string Address { get; set; }
         public string Phone { get; set; }
         public double Balance { get; set; }
+        public List<Transactions> Transactions { get; set; }
         public List<Card> Cards { get; set; }
+        public virtual Customer Customers { get; set; }
+
+        [ForeignKey("Customer")]
+        public Guid CustomerId { get; set; } // Змінено тип на Guid
     }
 
 }
