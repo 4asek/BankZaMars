@@ -1,8 +1,9 @@
 ﻿using WebApplication2.Data.Models;
+using WebApplication2.Models;
 
-namespace WebApplication2.Services.Contraxts
+namespace WebApplication2.Controller.Services.Contracts
 {
-    public interface IEmployees
+    public interface IEmployeeServices
     {
         Task CreateEmployees(Employee employee);
         Task<IEnumerable<Employee>> GetAllEmloyee();

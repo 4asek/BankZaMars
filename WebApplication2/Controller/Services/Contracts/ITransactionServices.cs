@@ -1,6 +1,7 @@
 ﻿using WebApplication2.Data.Models;
+using WebApplication2.Models;
 
-namespace WebApplication2.Services.Contraxts
+namespace WebApplication2.Controllers.Services.Contraxts
 {
     public interface ITransactionServices
     {

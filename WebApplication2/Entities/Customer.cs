@@ -1,4 +1,4 @@
-﻿namespace WebApplication2.Data.Models
+﻿namespace WebApplication2.Models
 {
     public class Customer
     {
@@ -8,6 +8,6 @@
         public string Country { get; set; }
         public string CPhone { get; set; }
         public string CEmail { get; set; }
-        public List<Account> Accounts { get; set; }
+        //public List<Account> Accounts { get; set; }
     }
 }

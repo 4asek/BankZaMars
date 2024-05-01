@@ -1,4 +1,5 @@
 ﻿using WebApplication2.Data.Models;
+using WebApplication2.Models;
 
 
 namespace WebApplication2.Data
