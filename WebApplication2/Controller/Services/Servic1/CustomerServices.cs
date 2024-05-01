@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication2.Controller.Services.Contracts;
 using WebApplication2.Data;
 using WebApplication2.Model;
 using WebApplication2.Models;
 
 namespace WebApplication2.Controller.Services.Servic1
 {
-    public class CustomerServices
+    public class CustomerServices : ICustomerServices
     {
         private readonly DataContext _context;
 

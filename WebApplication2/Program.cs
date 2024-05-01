@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using WebApplication2.Controller.Services.Contracts;
+using WebApplication2.Controller.Services.Servic1;
 using WebApplication2.Data;
 using WebApplication2.Data.Models;
 
@@ -7,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ICustomerServices, CustomerServices>();
+
 
 //Here changes
 builder.Services.AddDbContext<DataContext>(options =>
