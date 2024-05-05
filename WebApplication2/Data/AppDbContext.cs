@@ -22,18 +22,6 @@ namespace WebApplication2.Data
             modelBuilder.Entity<Card>()
                 .Property(c => c.Balance)
                 .HasColumnType("decimal(18,2)");
-            //modelBuilder.Entity<Transactions>(entity =>
-            //{
-            //    entity.HasKey(e => e.Id);
-
-            //    entity.Property(e => e.AccID)
-            //          .IsRequired();
-
-            //    entity.HasOne(e => e.Accounts)
-            //          .WithMany(a => a.Transactions)
-            //          .HasForeignKey(e => e.AccountId)
-            //          .HasPrincipalKey(x => x.id);
-            //});
             ///одна карта, багато транзакцій
             modelBuilder.Entity<Transactions>(entity =>
             {
@@ -52,6 +40,31 @@ namespace WebApplication2.Data
             .HasMany(a => a.Cards)
             .WithOne(c => c.Account)
             .HasForeignKey(c => c.AccountId);
+            // Один обліковий запис на одного клієнта
+            modelBuilder.Entity<Account>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.Property(c => c.CustomerId)
+                      .IsRequired();
+
+                entity.HasOne(e => e.Customer)
+                      .WithOne(c => c.Account)
+                      .HasForeignKey<Account>(e => e.CustomerId)
+                      .HasPrincipalKey<Customer>(c => c.Id);
+            });
+            //один працівник, багато аккаунтів
+            modelBuilder.Entity<Account>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.Property(c => c.EmployeeID).IsRequired();
+
+                entity.HasOne(e => e.Employees)
+                      .WithMany(c => c.Account)
+                      .HasForeignKey(e => e.EmployeeID)
+                      .HasPrincipalKey(c => c.Id);
+            });
         }
     }
 }
