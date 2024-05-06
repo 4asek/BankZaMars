@@ -1,21 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication2.Controller;
-using WebApplication2.Data.Models;
-using WebApplication2.Data;
-using WebApplication2.Controllers.Services.Contraxts;
-using WebApplication2.Controller.Services.Contracts;
-using Microsoft.AspNetCore.Authentication;
-using WebApplication2.Models;
-using WebApplication2.Controller.Services.Servic1;
-using WebApplication2.Model;
+﻿//using Microsoft.AspNetCore.Mvc;
+//using WebApplication2.Controller;
+//using WebApplication2.Data.Models;
+//using WebApplication2.Data;
+//using WebApplication2.Controllers.Services.Contraxts;
+//using WebApplication2.Controller.Services.Contracts;
+//using Microsoft.AspNetCore.Authentication;
+//using WebApplication2.Models;
+//using WebApplication2.Controller.Services.Servic1;
+//using WebApplication2.Model;
 
-namespace WebApplication2.Controller.Controllers
-{
+//namespace WebApplication2.Controller.Controllers
+//{
 
-    [Route("api/account")]
-    [ApiController]
-    public class AccountController : ControllerBase
-    {
+//    [Route("api/account")]
+//    [ApiController]
+//    public class AccountController : ControllerBase
+//    {
         /*
         private readonly DataContext _context;
         private readonly IAccountServices accountService;
@@ -85,5 +85,5 @@ namespace WebApplication2.Controller.Controllers
             return NoContent();
         }
         */
-    }
-}
+//    }
+//}

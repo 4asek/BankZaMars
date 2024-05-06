@@ -6,12 +6,7 @@ namespace WebApplication2.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options):base(options) 
-        { 
-        
-        
-        
-        }
+        public DataContext(DbContextOptions<DataContext> options):base(options) {}
         public DbSet<Card> Cards { get; set; }
         public DbSet<Transactions> Transactions { get; set; }
         public DbSet<Account> Account { get; set; }
