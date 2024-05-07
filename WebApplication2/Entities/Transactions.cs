@@ -9,7 +9,6 @@ namespace WebApplication2.Models
         [Key]
         public Guid Id { get; set; }
         public Guid AccID { get; set; } // Змінено тип на Guid
-        public Guid CardID { get; set; }
         public DateTime TransactionDate { get; set; }
         public double Suma { get; set; }
         public bool readiness { get; set; } // Це має бути властивість
