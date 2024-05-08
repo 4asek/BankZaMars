@@ -11,7 +11,7 @@ namespace WebApplication2.Models
         public int NumberCard { get; set; }
         public string CardName { get; set; }
         public int Pincode { get; set; }
-        public DateTime DataDii { get; set; }
+        public DateTime Data { get; set; }
         public int CVV { get; set; }
         public decimal Balance { get; set; }
         public virtual Account Account { get; set; }

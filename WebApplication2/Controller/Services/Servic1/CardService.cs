@@ -8,7 +8,7 @@ namespace WebApplication2.Controller.Services.Servic1
 {
     
         public class CardService : ICardSevices
-    {
+        {
             private readonly DataContext _context;
 
             public CardService(DataContext context)

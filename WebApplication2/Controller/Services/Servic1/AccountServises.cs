@@ -6,7 +6,7 @@ using WebApplication2.Model;
 
 namespace WebApplication2.Controller.Services.Servic1
 {
-    public class AccountService : IAccountService
+    public class AccountService : IAccountServices
     {
         private readonly DataContext _context;
 
@@ -90,7 +90,7 @@ namespace WebApplication2.Controller.Services.Servic1
             account.LastName  = requestModel.LastName;
             account.Balance = requestModel.Balance;
             account.EmployeeID = requestModel.EmployeeID;
-            account.CustomerId = requestModel.CustomerId;
+            account.CustomerId = requestModel.CustomerID;
 
             return account;
         }
@@ -102,7 +102,7 @@ namespace WebApplication2.Controller.Services.Servic1
             requestModel.LastName = account.LastName;
             requestModel.Balance = account.Balance;
             requestModel.EmployeeID = account.EmployeeID;
-            requestModel.CustomerId = account.CustomerId;
+            requestModel.CustomerID = account.CustomerId;
 
             return requestModel;
         }
@@ -112,7 +112,7 @@ namespace WebApplication2.Controller.Services.Servic1
             res.Name = account.Name;
             res.Balance = account.Balance;
             res.EmployeeID = account.EmployeeID;
-            res.CustomerId = account.CustomerId;
+            res.CustomerId = account.CustomerID;
 
             return res;
         }

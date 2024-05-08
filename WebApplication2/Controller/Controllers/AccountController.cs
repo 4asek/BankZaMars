@@ -1,22 +1,20 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using WebApplication2.Controller;
-//using WebApplication2.Data.Models;
-//using WebApplication2.Data;
-//using WebApplication2.Controllers.Services.Contraxts;
-//using WebApplication2.Controller.Services.Contracts;
-//using Microsoft.AspNetCore.Authentication;
-//using WebApplication2.Models;
-//using WebApplication2.Controller.Services.Servic1;
-//using WebApplication2.Model;
+﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication2.Controller;
+using WebApplication2.Data.Models;
+using WebApplication2.Data;
+using WebApplication2.Controller.Services.Contracts;
+using Microsoft.AspNetCore.Authentication;
+using WebApplication2.Models;
+using WebApplication2.Controller.Services.Servic1;
+using WebApplication2.Model;
 
-//namespace WebApplication2.Controller.Controllers
-//{
+namespace WebApplication2.Controller.Controllers
+{
 
-//    [Route("api/account")]
-//    [ApiController]
-//    public class AccountController : ControllerBase
-//    {
-        /*
+    [Route("api/account")]
+    [ApiController]
+    public class AccountController : ControllerBase
+    {
         private readonly DataContext _context;
         private readonly IAccountServices accountService;
 
@@ -26,16 +24,16 @@
             this.accountService = accountService;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<Account>>> GetAllAccount() 
+        [HttpGet("GetAllAccount")]
+        public async Task<ActionResult<List<Account>>> GetAllAccount() //work
         {
-            var account = await accountService.GetAllAccounts();
+            var account = await accountService.GetAllAccount();
 
             return Ok(account);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(Guid id) 
+        [HttpGet("GetAccount/{id}")]
+        public async Task<ActionResult<Account>> GetAccount(Guid id) //work
         {
             var account = await _context.Account.FindAsync(id);
             if (account == null)
@@ -45,12 +43,12 @@
             return Ok(account);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Account>> AddAccount(AccountRequesModel account)
+        [HttpPost("AddAccount")]
+        public async Task<ActionResult<Account>> AddAccount(AccountRequesModel account) //тут
         {
             try
             {
-                var createdAccount = await IAccountServices.AddAccount(account);
+                var createdAccount = await accountService.AddAccount(account);
                 return Ok(createdAccount);
             }
             catch (ArgumentNullException ex)
@@ -63,19 +61,19 @@
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAccount(Guid id, Account customer) 
+        [HttpPut("UpdateAccount/{id}")]
+        public async Task<IActionResult> UpdateAccount(Guid id, AccountRequesModel account) //Work
         {
             if (id == Guid.Empty)
             {
                 return BadRequest();
             }
-            await accountService.UpdateAccount(id, customer);
+            await accountService.UpdateAccount(id, account);
             return Ok(id);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(Guid id) 
+        [HttpDelete("DeleteAccount/{id}")]
+        public async Task<IActionResult> DeleteAccount(Guid id) //work
         {
             if (id == Guid.Empty)
             {
@@ -84,6 +82,6 @@
             await accountService.DeleteAccount(id);
             return NoContent();
         }
-        */
-//    }
-//}
+
+    }
+}
