@@ -22,7 +22,7 @@ namespace WebApplication2.Data
             {
                 entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.CardID)
+                entity.Property(e => e.CardId)
                       .IsRequired();
 
                 entity.HasOne(e => e.Cards)
