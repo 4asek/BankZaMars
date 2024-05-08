@@ -15,12 +15,12 @@ namespace WebApplication2.Data.Models
         public string Address { get; set; }
         public string Phone { get; set; }
         public double Balance { get; set; }
-        public List<Transactions> Transactions { get; set; }
+        // public List<Transactions> Transactions { get; set; }
         public List<Card> Cards { get; set; }
         public virtual Customer Customer { get; set; }
 
         [ForeignKey("Customer")]
-        public Guid CustomerId { get; set; }
+        public Guid CustomerID { get; set; }
         public virtual Employee Employees { get; set; }
 
         [ForeignKey("Employees")]

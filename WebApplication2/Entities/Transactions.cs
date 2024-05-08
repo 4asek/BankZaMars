@@ -12,13 +12,13 @@ namespace WebApplication2.Models
         public DateTime TransactionDate { get; set; }
         public double Suma { get; set; }
         public bool readiness { get; set; } 
-        public virtual Account Accounts { get; set; }
+        //public virtual Account Accounts { get; set; }
 
-        [ForeignKey("Account")]
-        public Guid AccountId { get; set; } 
+        //[ForeignKey("Account")]
+        //public Guid AccountId { get; set; } 
         public virtual Card Cards { get; set; }
 
         [ForeignKey("Account")]
-        public Guid CardId { get; set; } 
+        public Guid CardID { get; set; } 
     }
 }// 

@@ -20,6 +20,6 @@ namespace WebApplication2.Models
         public Guid AccountId { get; set; }
         public List<Transactions> Transactions { get; set; }
 
-        public string AccLink { get; set; }
+        // public string AccLink { get; set; }
     }
 }

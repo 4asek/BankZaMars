@@ -22,7 +22,7 @@ namespace WebApplication2.Data
             {
                 entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.CardId)
+                entity.Property(e => e.CardID)
                       .IsRequired();
 
                 entity.HasOne(e => e.Cards)
@@ -40,12 +40,12 @@ namespace WebApplication2.Data
             {
                 entity.HasKey(e => e.Id);
 
-                entity.Property(c => c.CustomerId)
+                entity.Property(c => c.CustomerID)
                       .IsRequired();
 
                 entity.HasOne(e => e.Customer)
                       .WithOne(c => c.Account)
-                      .HasForeignKey<Account>(e => e.CustomerId)
+                      .HasForeignKey<Account>(e => e.CustomerID)
                       .HasPrincipalKey<Customer>(c => c.Id);
             });
             //один працівник, багато аккаунтів

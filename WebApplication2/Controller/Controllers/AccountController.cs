@@ -25,7 +25,7 @@ namespace WebApplication2.Controller.Controllers
         }
 
         [HttpGet("GetAllAccount")]
-        public async Task<ActionResult<List<Account>>> GetAllAccount() //work
+        public async Task<ActionResult<List<Account>>> GetAllAccount() 
         {
             var account = await accountService.GetAllAccount();
 
@@ -33,7 +33,7 @@ namespace WebApplication2.Controller.Controllers
         }
 
         [HttpGet("GetAccount/{id}")]
-        public async Task<ActionResult<Account>> GetAccount(Guid id) //work
+        public async Task<ActionResult<Account>> GetAccount(Guid id) 
         {
             var account = await _context.Account.FindAsync(id);
             if (account == null)
@@ -44,7 +44,7 @@ namespace WebApplication2.Controller.Controllers
         }
 
         [HttpPost("AddAccount")]
-        public async Task<ActionResult<Account>> AddAccount(AccountRequesModel account) //тут
+        public async Task<ActionResult<Account>> AddAccount(AccountRequesModel account) 
         {
             try
             {
@@ -62,7 +62,7 @@ namespace WebApplication2.Controller.Controllers
         }
 
         [HttpPut("UpdateAccount/{id}")]
-        public async Task<IActionResult> UpdateAccount(Guid id, AccountRequesModel account) //Work
+        public async Task<IActionResult> UpdateAccount(Guid id, AccountRequesModel account) 
         {
             if (id == Guid.Empty)
             {
@@ -73,7 +73,7 @@ namespace WebApplication2.Controller.Controllers
         }
 
         [HttpDelete("DeleteAccount/{id}")]
-        public async Task<IActionResult> DeleteAccount(Guid id) //work
+        public async Task<IActionResult> DeleteAccount(Guid id) 
         {
             if (id == Guid.Empty)
             {

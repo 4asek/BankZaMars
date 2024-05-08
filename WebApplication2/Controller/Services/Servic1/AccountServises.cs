@@ -59,7 +59,7 @@ namespace WebApplication2.Controller.Services.Servic1
             }
 
             account.EmployeeID = Guid.Empty;
-            account.CustomerId = Guid.Empty;
+            account.CustomerID = Guid.Empty;
             _context.Account.Remove(account);
             await _context.SaveChangesAsync();
 
@@ -90,7 +90,7 @@ namespace WebApplication2.Controller.Services.Servic1
             account.LastName  = requestModel.LastName;
             account.Balance = requestModel.Balance;
             account.EmployeeID = requestModel.EmployeeID;
-            account.CustomerId = requestModel.CustomerID;
+            account.CustomerID = requestModel.CustomerID;
 
             return account;
         }
@@ -102,7 +102,7 @@ namespace WebApplication2.Controller.Services.Servic1
             requestModel.LastName = account.LastName;
             requestModel.Balance = account.Balance;
             requestModel.EmployeeID = account.EmployeeID;
-            requestModel.CustomerID = account.CustomerId;
+            requestModel.CustomerID = account.CustomerID;
 
             return requestModel;
         }
@@ -110,9 +110,10 @@ namespace WebApplication2.Controller.Services.Servic1
         private Account MapRequestToSet(Account res, AccountRequesModel account)
         {
             res.Name = account.Name;
+            res.LastName = account.LastName;
             res.Balance = account.Balance;
             res.EmployeeID = account.EmployeeID;
-            res.CustomerId = account.CustomerID;
+            res.CustomerID = account.CustomerID;
 
             return res;
         }
