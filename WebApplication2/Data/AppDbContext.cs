@@ -27,7 +27,7 @@ namespace WebApplication2.Data
 
                 entity.HasOne(e => e.Cards)
                       .WithMany(a => a.Transactions)
-                      .HasForeignKey(e => e.AccountId)
+                      .HasForeignKey(e => e.CardID)
                       .HasPrincipalKey(x => x.Id);
             });
             //один аккаунт, багато карт

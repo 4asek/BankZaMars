@@ -11,14 +11,14 @@ namespace WebApplication2.Models
         public Guid AccID { get; set; } // Змінено тип на Guid
         public DateTime TransactionDate { get; set; }
         public double Suma { get; set; }
-        public bool readiness { get; set; } // Це має бути властивість
+        public bool readiness { get; set; } 
         public virtual Account Accounts { get; set; }
 
         [ForeignKey("Account")]
-        public Guid AccountId { get; set; } // Змінено тип на Guid
+        public Guid AccountId { get; set; } 
         public virtual Card Cards { get; set; }
 
         [ForeignKey("Account")]
-        public Guid CardId { get; set; } // Змінено тип на Guid
+        public Guid CardId { get; set; } 
     }
 }// 
