@@ -9,7 +9,6 @@ namespace WebApplication2.Controllers.Services.Contraxts
     {
         Task<ActionResult<List<Transactions>>> GetAllTransaction(); 
         Task <TransactionRequesModel> GetTransaction(Guid id);
-     
         Task<Transactions> AddTransactions(TransactionRequesModel transaction);
         Task<Guid> UpdateTransactions(Guid id, TransactionRequesModel requestModel);
         Task<Guid> DeleteTransactions(Guid id);

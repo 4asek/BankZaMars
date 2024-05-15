@@ -21,7 +21,7 @@ namespace ProjectBank.Controller.Controllers
         }
 
         [HttpGet("GetAllCards")]
-        public async Task<ActionResult<List<Card>>> GetAllCards() //work
+        public async Task<ActionResult<List<Card>>> GetAllCards() 
         {
             var card = await cardService.GetAllCard();
 
@@ -29,7 +29,7 @@ namespace ProjectBank.Controller.Controllers
         }
 
         [HttpGet("GetCard/{id}")]
-        public async Task<ActionResult<Card>> GetCard(Guid id) //work
+        public async Task<ActionResult<Card>> GetCard(Guid id) 
         {
             var card = await _context.Cards.FindAsync(id);
             if (card == null)
@@ -41,7 +41,7 @@ namespace ProjectBank.Controller.Controllers
 
 
         [HttpPost("AddCard")]
-        public async Task<ActionResult<Card>> AddCard(CardRequesModel card) //тут
+        public async Task<ActionResult<Card>> AddCard(CardRequesModel card) 
         {
             try
             {
@@ -60,7 +60,7 @@ namespace ProjectBank.Controller.Controllers
 
 
         [HttpPut("UpdateCard/{id}")]
-        public async Task<IActionResult> UpdateCard(Guid id, CardRequesModel card) //Work
+        public async Task<IActionResult> UpdateCard(Guid id, CardRequesModel card) 
         {
             if (id == Guid.Empty)
             {
@@ -72,7 +72,7 @@ namespace ProjectBank.Controller.Controllers
 
 
         [HttpDelete("DeleteCard/{id}")]
-        public async Task<IActionResult> DeleteCard(Guid id) //work
+        public async Task<IActionResult> DeleteCard(Guid id) 
         {
             if (id == Guid.Empty)
             {

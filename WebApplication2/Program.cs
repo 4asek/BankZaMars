@@ -18,6 +18,7 @@ builder.Services.AddScoped<IEmployeeServices, EmployeeServices>();
 builder.Services.AddScoped<ICardSevices, CardService>();
 builder.Services.AddScoped<IAccountServices, AccountService>();
 builder.Services.AddScoped<ITransactionServices, TransactionService>();
+builder.Services.AddScoped<IAccountTransferService, IAccountTransferService>();
 
 //Here changes
 builder.Services.AddDbContext<DataContext>(options =>
